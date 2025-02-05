@@ -1,5 +1,5 @@
 // Typewriter effect for the text
-let text = 'Coming Soon...';  // The text to display
+let text = 'Coming Soon....';  // The text to display
 let index = 0;  // The current character index
 let textElement = document.getElementById('coming-text');  // The element to display the text
 
