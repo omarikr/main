@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knox Bot</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://tse1.mm.bing.net/th?id=OIP.F7ElL4xW8D2jhtrWGB73gAHaEo&pid=Api&P=0&h=220') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            transition: background 1s ease-in-out;
+        }
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: url('https://images-ext-1.discordapp.net/external/7AteIa4UW71PHji9spZ1qwUNaRWgkDZ0tooGHy8nzfk/%3Fsize%3D2048/https/cdn.discordapp.com/icons/1301599485721444452/68f557a1a4e79f83f9aa17ecbe6228bc.webp?format=webp') no-repeat center center/cover;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        .profile-img:hover {
+            transform: scale(1.1);
+        }
+        .description {
+            max-width: 600px;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            background: gray;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            text-decoration: none;
+            box-shadow: 0 0 10px rgba(169, 169, 169, 0.8);
+        }
+        .button:hover {
+            box-shadow: 0 0 20px rgba(169, 169, 169, 1);
+            transform: translateY(-5px);
+        }
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            color: yellow;
+        }
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 18px;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById("theme-icon");
+            if (body.style.background.includes('F7ElL4xW8D2jhtrWGB73gAHaEo')) {
+                body.style.background = "url('https://tse1.mm.bing.net/th?id=OIP.b9O5JKa0icOQeQneviahJgHaEo&pid=Api&P=0&h=220') no-repeat center center/cover";
+                themeIcon.textContent = "☀️";
+            } else {
+                body.style.background = "url('https://tse1.mm.bing.net/th?id=OIP.F7ElL4xW8D2jhtrWGB73gAHaEo&pid=Api&P=0&h=220') no-repeat center center/cover";
+                themeIcon.textContent = "🌙";
+            }
+        }
+    </script>
+</head>
+<body>
+    <a href="https://omarikr.github.io/main/" class="back-link">Back</a>
+    <div id="theme-icon" class="theme-toggle" onclick="toggleTheme()">🌙</div>
+    <div class="profile-img"></div>
+    <p class="description">
+        Mystic-bot is a powerful, all-in-one moderation bot designed quickly setup and moderate. With a comprehensive suite of features, it offers advanced ticket system and community management featureus. It’s the perfect multipurpose tool to ensure smooth server operation and effective management.
+    </p>
+    <a href="https://discord.gg/dpTGFrwGFa" class="button">Support Server</a>
+    <a href="policy.html" class="button">Documentation</a>
+</body>
+</html>
