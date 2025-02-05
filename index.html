@@ -8,9 +8,7 @@
         body {
             margin: 0;
             padding: 0;
-            background: black;
-            background-image: radial-gradient(white 1px, transparent 1px);
-            background-size: 50px 50px;
+            background: url('https://tse1.mm.bing.net/th?id=OIP.F7ElL4xW8D2jhtrWGB73gAHaEo&pid=Api&P=0&h=220') no-repeat center center/cover;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -19,7 +17,7 @@
             text-align: center;
             color: white;
             font-family: 'Arial', sans-serif;
-            transition: background 0.5s ease-in-out;
+            transition: background 1s ease-in-out;
         }
         .theme-toggle {
             position: absolute;
@@ -29,11 +27,19 @@
             background: none;
             border: none;
             cursor: pointer;
-            color: yellow;
+            color: white;
+            transition: transform 0.3s ease-in-out;
+        }
+        .theme-toggle:hover {
+            transform: scale(1.2);
         }
         h1 {
             font-size: 3rem;
             font-family: 'Verdana', sans-serif;
+            transition: transform 0.3s;
+        }
+        h1:hover {
+            transform: scale(1.1);
         }
         h2 {
             font-size: 2rem;
@@ -55,17 +61,18 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: all 0.3s ease-in-out;
             text-decoration: none;
             box-shadow: 0 0 10px rgba(173, 216, 230, 0.8);
         }
         .button:hover {
             box-shadow: 0 0 20px rgba(173, 216, 230, 1);
+            transform: translateY(-5px);
         }
     </style>
 </head>
 <body>
-    <button class="theme-toggle" onclick="toggleTheme()">☀️</button>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
     <h1>Omarikr</h1>
     <h2>My Projects</h2>
     <div class="buttons">
@@ -77,16 +84,12 @@
         function toggleTheme() {
             const body = document.body;
             const button = document.querySelector('.theme-toggle');
-            if (body.style.background === 'black') {
-                body.style.background = 'skyblue';
-                body.style.backgroundImage = 'url(https://www.transparenttextures.com/patterns/cloudy-day.png)';
-                button.innerHTML = '🌙';
-                button.style.color = 'white';
-            } else {
-                body.style.background = 'black';
-                body.style.backgroundImage = 'radial-gradient(white 1px, transparent 1px)';
+            if (body.style.background.includes('F7ElL4xW8D2jhtrWGB73gAHaEo')) {
+                body.style.background = "url('https://tse1.mm.bing.net/th?id=OIP.b9O5JKa0icOQeQneviahJgHaEo&pid=Api&P=0&h=220') no-repeat center center/cover";
                 button.innerHTML = '☀️';
-                button.style.color = 'yellow';
+            } else {
+                body.style.background = "url('https://tse1.mm.bing.net/th?id=OIP.F7ElL4xW8D2jhtrWGB73gAHaEo&pid=Api&P=0&h=220') no-repeat center center/cover";
+                button.innerHTML = '🌙';
             }
         }
     </script>
