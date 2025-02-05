@@ -8,7 +8,9 @@
         body {
             margin: 0;
             padding: 0;
-            background: url('https://tse1.mm.bing.net/th?id=OIP.1Dn0FQsAWd3c_sC02oMaewHaEK&pid=Api&P=0&h=220') no-repeat center center/cover;
+            background: black;
+            background-image: radial-gradient(white 1px, transparent 1px);
+            background-size: 50px 50px;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -16,17 +18,26 @@
             align-items: center;
             text-align: center;
             color: white;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            transition: background 0.5s ease-in-out;
+        }
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: yellow;
         }
         h1 {
             font-size: 3rem;
-            font-weight: bold;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            font-family: 'Verdana', sans-serif;
         }
         h2 {
             font-size: 2rem;
-            font-weight: bold;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            font-family: 'Verdana', sans-serif;
             margin-top: 10px;
         }
         .buttons {
@@ -40,26 +51,44 @@
             font-size: 1.2rem;
             font-weight: bold;
             color: white;
-            background: blue;
+            background: lightblue;
             border: none;
             border-radius: 10px;
             cursor: pointer;
             transition: 0.3s;
             text-decoration: none;
-            box-shadow: 0 0 10px rgba(0, 0, 255, 0.8);
+            box-shadow: 0 0 10px rgba(173, 216, 230, 0.8);
         }
         .button:hover {
-            box-shadow: 0 0 20px rgba(0, 0, 255, 1);
+            box-shadow: 0 0 20px rgba(173, 216, 230, 1);
         }
     </style>
 </head>
 <body>
+    <button class="theme-toggle" onclick="toggleTheme()">☀️</button>
     <h1>Omarikr</h1>
     <h2>My Projects</h2>
     <div class="buttons">
-     <a href="https://discord.gg/AjeUFJT9n2" class="button" target="_blank">Knox Studios</a>
-     <a href="https://discord.gg/AjeUFJT9n2" class="button" target="_blank">Knox-bot Support</a>
-     <a href="https://discord.gg/F2zhJX6sXw" class="button" target="_blank">Mystic-bot Support</a>
+        <a href="https://discord.gg/AjeUFJT9n2" class="button" target="_blank">Knox Studios</a>
+        <a href="https://discord.gg/AjeUFJT9n2" class="button" target="_blank">Knox-bot Support</a>
+        <a href="https://discord.gg/F2zhJX6sXw" class="button" target="_blank">Mystic-bot Support</a>
     </div>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const button = document.querySelector('.theme-toggle');
+            if (body.style.background === 'black') {
+                body.style.background = 'skyblue';
+                body.style.backgroundImage = 'url(https://www.transparenttextures.com/patterns/cloudy-day.png)';
+                button.innerHTML = '🌙';
+                button.style.color = 'white';
+            } else {
+                body.style.background = 'black';
+                body.style.backgroundImage = 'radial-gradient(white 1px, transparent 1px)';
+                button.innerHTML = '☀️';
+                button.style.color = 'yellow';
+            }
+        }
+    </script>
 </body>
 </html>
