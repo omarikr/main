@@ -1,16 +1,27 @@
-// Typewriter effect for the text
-let text = 'Coming Soon....';  // The text to display
-let index = 0;  // The current character index
-let textElement = document.getElementById('coming-text');  // The element to display the text
+document.addEventListener("DOMContentLoaded", function() {
+    const textElement = document.getElementById('animated-text');
+    const text = "coming soon";
+    let index = 0;
+    const interval = 200; // Speed of typing
 
-// Function to type the text one character at a time
-function typeWriter() {
-  if (index < text.length) {
-    textElement.innerHTML += text.charAt(index);  // Add the next character to the element
-    index++;  // Move to the next character
-    setTimeout(typeWriter, 300);  // Adjust the typing speed here (300ms between each character)
-  }
-}
+    function typeText() {
+        if (index < text.length) {
+            textElement.textContent += text.charAt(index);
+            index++;
+            setTimeout(typeText, interval);
+        } else {
+            setTimeout(() => {
+                textElement.textContent = '';
+                index = 0;
+                typeText();
+            }, 5000); // Wait for 5 seconds before repeating
+        }
+    }
 
-// Call the typeWriter function to start the typing effect
-typeWriter();
+    typeText();
+
+    // Add cursor blinking effect
+    const cursor = document.createElement('span');
+    cursor.className = 'cursor';
+    textElement.appendChild(cursor);
+});
