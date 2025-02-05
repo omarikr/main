@@ -54,9 +54,40 @@
             box-shadow: 0 0 20px rgba(169, 169, 169, 1);
             transform: translateY(-5px);
         }
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 24px;
+            color: yellow;
+        }
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 18px;
+            color: white;
+            text-decoration: none;
+        }
     </style>
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById("theme-icon");
+            if (body.style.background.includes('F7ElL4xW8D2jhtrWGB73gAHaEo')) {
+                body.style.background = "url('https://tse1.mm.bing.net/th?id=OIP.b9O5JKa0icOQeQneviahJgHaEo&pid=Api&P=0&h=220') no-repeat center center/cover";
+                themeIcon.textContent = "☀️";
+            } else {
+                body.style.background = "url('https://tse1.mm.bing.net/th?id=OIP.F7ElL4xW8D2jhtrWGB73gAHaEo&pid=Api&P=0&h=220') no-repeat center center/cover";
+                themeIcon.textContent = "🌙";
+            }
+        }
+    </script>
 </head>
 <body>
+    <a href="https://omarikr.github.io/main/" class="back-link">Back</a>
+    <div id="theme-icon" class="theme-toggle" onclick="toggleTheme()">🌙</div>
     <div class="profile-img"></div>
     <p class="description">
         Knox is a powerful, all-in-one security and automation bot designed to enhance server safety and management. With a comprehensive suite of features, it offers advanced anti-raid protection, automod functions, and a customizable ticket system to streamline support within your community. Knox comes equipped with robust raid mode capabilities, detecting and preventing malicious activity with precision. Whether you need to manage user behavior, automate tasks, or safeguard your server from raids, Knox provides a reliable and flexible solution for all your bot needs. It’s the perfect multipurpose tool to ensure smooth server operation and secure, effective management.
