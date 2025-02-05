@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 textElement.textContent = '';
                 index = 0;
                 typeText();
-            }, 5000); // Wait for 5 seconds before repeating
+            }, 500); // Wait for 5 seconds before repeating
         }
     }
 
