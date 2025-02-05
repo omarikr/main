@@ -1,0 +1,62 @@
+/* General reset and body setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  overflow: hidden;
+  color: #00FF00; /* Green text color */
+}
+
+/* Background animation: scrolling code effect */
+@keyframes code-scroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black url('https://www.transparenttextures.com/patterns/asfalt.png') repeat top left;
+  z-index: -1;
+  animation: code-scroll 5s linear infinite;
+}
+
+/* Container for centering the header */
+.container {
+  text-align: center;
+  z-index: 1;
+}
+
+/* Header style */
+h1 {
+  font-size: 60px;
+  font-weight: bold;
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Header glowing effect */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 15px #00FF00;
+  }
+  100% {
+    text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FF00;
+  }
+}
