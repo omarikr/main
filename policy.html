@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy - Knox</title>
+    <style>
+        body {
+            background: url('https://tse1.mm.bing.net/th?id=OIP.F7ElL4xW8D2jhtrWGB73gAHaEo&pid=Api&P=0&h=220') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background 0.5s ease-in-out;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        .paragraph {
+            max-width: 800px;
+            font-size: 16px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            background: gray;
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 8px;
+            margin: 10px;
+            transition: 0.3s ease-in-out;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+        }
+
+        .button:hover {
+            box-shadow: 0px 0px 15px white;
+        }
+
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+
+    <div class="container">
+        <img src="https://images-ext-1.discordapp.net/external/ah97O1hVD_MkgjjW_Mv3CTviQzgqtme7PAxwb6nSrPo/%3Fsize%3D1024/https/cdn.discordapp.com/icons/1287379446793371771/8b422a80d396e547127d52618b49c1e5.png?format=webp&quality=lossless" 
+             alt="Knox Logo" class="logo">
+        <p class="paragraph">
+            Bots developed by Knox Team are designed to enhance your Discord experience with advanced security, 
+            moderation, and utility features. By using our bots, you agree to comply with Discord’s Terms of Service 
+            and Community Guidelines. Any misuse, including spam, abuse, or attempts to exploit features, may result 
+            in restrictions or bans from using our services. We do not collect, store, or share personal data beyond 
+            what is necessary for bot functionality. User-related data, such as server settings and configurations, 
+            are only stored temporarily or locally within JSON files for customization purposes. We are not responsible 
+            for any issues, downtime, or unintended consequences resulting from bot usage. By using our bots, you 
+            acknowledge that features, commands, and policies may change at any time without prior notice.
+        </p>
+
+        <div class="buttons">
+            <a href="policy.html" class="button">Documentation</a>
+            <a href="https://omarikr.github.io/main/" class="button">Back</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            let body = document.body;
+            let themeButton = document.querySelector('.theme-toggle');
+
+            if (body.style.background.includes("F7ElL4xW8D2jhtrWGB73gAHaEo")) {
+                body.style.background = "url('https://tse1.mm.bing.net/th?id=OIP.b9O5JKa0icOQeQneviahJgHaEo&pid=Api&P=0&h=220') no-repeat center center fixed";
+                body.style.backgroundSize = "cover";
+                themeButton.innerHTML = "☀️";
+            } else {
+                body.style.background = "url('https://tse1.mm.bing.net/th?id=OIP.F7ElL4xW8D2jhtrWGB73gAHaEo&pid=Api&P=0&h=220') no-repeat center center fixed";
+                body.style.backgroundSize = "cover";
+                themeButton.innerHTML = "🌙";
+            }
+        }
+    </script>
+</body>
+</html>
